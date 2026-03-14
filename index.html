@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALIZA MAE CONSABO</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  
+  <header>
+    <nav>
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="menu-toggle">☰</div>
+  </header>
+
+    <section id="home" class="hero">
+      <div class="hero-img">
+          <img src="images/bleh.jpg" alt="" class="profile-pic">
+          <h3 class="job-title">Jobless</h3>
+      </div>
+      <div class="hero-content">
+          <h1>Hi, I’m Aliza Consabo 🌸</h1>
+          <p>A creative developer who loves talking, watching cute design, and making websites magical ✨</p>
+          <a href="#projects" class="btn">See My Work</a>
+      </div>
+
+    </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <h2 class="heading">💖 About Me</h2>
+    <p>
+      I’m passionate about web development and creating fun, interactive designs with a girly touch.
+      I love blending creativity with technology to make websites feel alive and beautiful.
+    </p>
+  </section>
+
+
+  <section id="skills" class="skills">
+    <h2 class="heading">🎀 My Skills</h2>
+    <div class="skills-grid">
+      <div class="skill"><i class="fas fa-code"></i> HTML / CSS</div>
+      <div class="skill"><i class="fas fa-paint-brush"></i> UI Design</div>
+      <div class="skill"><i class="fas fa-laptop-code"></i> JavaScript</div>
+      <div class="skill"><i class="fas fa-heart"></i> Creative Thinking</div>
+    </div>
+  </section>
+
+
+  <section id="projects" class="projects">
+    <h2 class="heading">🌸 Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="NoProject-temp.png" alt="Project 1">
+        <h3>Landing Page</h3>
+      </div>
+      <div class="project-card">
+        <img src="NoProject-temp.png" alt="Project 2">
+        <h3>Dashboard</h3>
+      </div>
+      <div class="project-card">
+        <img src="NoProject-temp.png" alt="Project 3">
+        <h3>GE-Commerce</h3>
+      </div>
+    </div>
+  </section>
+
+
+    <section id="contact" class="contact-section">
+      <h2 class="heading">📩 Contact Me</h2>
+      <p>Let’s create something magical together 💕</p>
+
+      <div class="contact-details">
+          <div class="contacts">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Mandurriao, Hibao-an Sur, Iloilo City</span>
+          </div>
+          <div class="contacts">
+              <i class="fas fa-phone"></i>
+              <span>+63 963 035 5124</span>
+          </div>
+          <div class="contacts">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:alizamaeconsabo@gmail.com">alizamaeconsabo@gmail.com</a>
+          </div>
+      </div>
+
+      <a href="mailto:aliz class="btn">Send Email</a>
+    </section>
+
+
+  <footer class="footer">
+    <p>Made with 💖 by Aliza Mae Consabo | 2025</p>
+    <div class="socials">
+      <a href="#" aria-label="facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="github"><i class="fab fa-github"></i></a>
+    </div>
+  </footer>
+</body>
+</html>
+
+
+<script>
+
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav');
+
+  menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("nav a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 120;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
